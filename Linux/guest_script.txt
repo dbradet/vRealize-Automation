@@ -1,4 +1,6 @@
-wget --no-check-certificate https://vra.labdom.local/software/download/prepare_vra_template_linux.tar.gz
+#vRA 7.5 - Linux Guest Agent Script
+
+wget --no-check-certificate https://vra.domain.local/software/download/prepare_vra_template_linux.tar.gz
 tar -xvf prepare_vra_template_linux.tar.gz
 cd prepare_vra_template
 chmod +x prepare_vra_template.sh
