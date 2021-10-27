@@ -1,6 +1,5 @@
-name:Minions
-version:1.0.1
-formatVersion: 1
+name: Minions
+version: 1.0.1
 inputs:
   environment:
     type: string
