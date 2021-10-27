@@ -1,0 +1,15 @@
+---
+exportVersion: "1"
+exportId: "8a7480a376d3a3e10176f3e4e57f0023"
+name: "DB - Install Minion (Segreto)"
+runtime: "powershell"
+entrypoint: "handler"
+inputs:
+  secret:8a74809d7c15921d017c18e34b210004: ""
+  secret:8a74809d7c15921d017c18edcbf40005: ""
+  secret:8a74809d7c15921d017c18eeb7070006: ""
+  secret:8a74809d7c15921d017c18f5e4d1000c: ""
+timeoutSeconds: 600
+deploymentTimeoutSeconds: 900
+actionType: "SCRIPT"
+memoryInMB: 512
