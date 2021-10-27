@@ -1,0 +1,37 @@
+formatVersion: 1
+inputs:
+  environment:
+    type: string
+    default: Development
+    enum:
+      - Production
+      - Development
+  minionID:
+    type: string
+    title: Minion ID
+resources:
+  LinuxVM-Minion:
+    type: Cloud.vSphere.Machine
+    properties:
+      name: salt-minion-vra
+      cpuCount: 1
+      totalMemoryMB: 2048
+      imageRef: Template-CentOS-Everything
+      saltConfiguration:
+        masterId: '9b:70:23:37:84:1f:94:ba:d2:dc:b1:a4:78:e2:48:c3:94:bb:7c:85:76:06:de:28:cd:cd:75:57:cc:87:fc:df'
+        minionId: '${input.minionID}'
+        saltEnvironment: sse
+        stateFiles:
+          - /doe.sls
+        variables:
+          user: joe
+      remoteAccess:
+        authentication: usernamePassword
+        username: root
+        password: Rm2502001!
+      networks:
+        - network: '${resource.vSphere_Network.id}'
+  vSphere_Network:
+    type: Cloud.Network
+    properties:
+      networkType: existing
